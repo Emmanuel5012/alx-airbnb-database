@@ -1,39 +1,31 @@
-# 🔗 SQL Joins Mastery
+# SQL Joins Practice
 
-> A comprehensive guide to mastering SQL joins with practical examples and real-world scenarios.
+This repository demonstrates different SQL join operations with practical examples.
 
-## 📋 Table of Contents
-- [🔗 SQL Joins Mastery](#-sql-joins-mastery)
-  - [📋 Table of Contents](#-table-of-contents)
-  - [🎯 Overview](#-overview)
-  - [🗃️ Database Schema](#️-database-schema)
+## Queries
 
-## 🎯 Overview
+1. **INNER JOIN** - Get bookings with user details  
+   ```sql
+   SELECT b.*, u.* FROM bookings b
+   INNER JOIN users u ON b.user_id = u.user_id;
+   ```
 
-This repository contains SQL examples and exercises focused on mastering different types of joins. Perfect for developers looking to strengthen their database querying skills through hands-on practice.
+2. **LEFT JOIN** - Get all properties with reviews (including properties without reviews)  
+   ```sql
+   SELECT p.*, r.* FROM properties p
+   LEFT JOIN reviews r ON p.property_id = r.property_id;
+   ```
 
-**What you'll learn:**
-- INNER JOIN fundamentals
-- LEFT/RIGHT JOIN operations
-- FULL OUTER JOIN concepts
-- Real-world join scenarios
-- Best practices and optimization tips
+3. **FULL OUTER JOIN** - Get all users and all bookings (including unmatched records)  
+   ```sql
+   SELECT u.*, b.* FROM users u
+   FULL OUTER JOIN bookings b ON u.user_id = b.user_id;
+   ```
 
-## 🗃️ Database Schema
+## Purpose
+- Understand different SQL join types
+- See practical examples of each join operation
+- Learn when to use each join type
 
-Our examples use a **booking system** with four interconnected tables:
-
+Simply run these queries against your database to see the results.
 ```
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│    Users    │    │  Properties │    │   Bookings  │    │   Reviews   │
-├─────────────┤    ├─────────────┤    ├─────────────┤    ├─────────────┤
-│ user_id     │◄──┐│ property_id │◄──┐│ booking_id  │    │ review_id   │
-│ username    │   ││ name        │   ││ user_id     │──┐ │ property_id │
-│ email       │   ││ location    │   ││ property_id │  └►│ user_id     │
-│ created_at  │   ││ price       │   ││ check_in    │    │ rating      │
-└─────────────┘   │└─────────────┘   ││ check_out   │    │ comment     │
-                  │                  ││ total       │    └─────────────┘
-                  └──────────────────┘│ status      │
-                                     └─────────────┘
-```
-
