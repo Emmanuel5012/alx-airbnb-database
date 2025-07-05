@@ -1,0 +1,7 @@
+"QUERY PLAN"
+"Bitmap Heap Scan on booking  (cost=4.19..12.66 rows=4 width=82) (actual time=0.060..0.061 rows=0 loops=1)"
+"  Recheck Cond: ((start_date >= '2025-05-01'::date) AND (start_date <= '2025-05-31'::date))"
+"  ->  Bitmap Index Scan on idx_booking_start_date  (cost=0.00..4.19 rows=4 width=0) (actual time=0.021..0.022 rows=0 loops=1)"
+"        Index Cond: ((start_date >= '2025-05-01'::date) AND (start_date <= '2025-05-31'::date))"
+"Planning Time: 12.655 ms"
+"Execution Time: 0.357 ms"
