@@ -7,7 +7,7 @@ CREATE INDEX idx_booking_property_id ON Booking(property_id);
 CREATE INDEX idx_booking_start_date ON Booking(start_date);
 CREATE INDEX idx_booking_total_price ON Booking(total_price);
 
---EXPLAIN ANALYZE
+EXPLAIN ANALYZE
 SELECT *
 FROM Booking
 WHERE property_id = '1'
