@@ -24,6 +24,12 @@ JOIN Property p ON b.property_id = p.property_id
 LEFT JOIN Payment pay ON b.booking_id = pay.booking_id;
 
 
+-- ✅ WHERE comes before ORDER BY
+WHERE b.start_date >= CURRENT_DATE - INTERVAL '6 months'
+  AND b.total_price > 0
+
+ORDER BY b.start_date DESC;
+
 
 EXPLAIN ANALYZE
 SELECT 
