@@ -40,6 +40,11 @@ CREATE TABLE Booking (
   FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
+EXPLAIN ANALYZE
+SELECT * FROM Booking
+WHERE start_date BETWEEN '2025-05-01' AND '2025-05-31';
+
+
 CREATE INDEX idx_booking_property ON Booking(property_id);
 CREATE INDEX idx_booking_user ON Booking(user_id);
 

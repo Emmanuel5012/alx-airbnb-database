@@ -1,0 +1,6 @@
+"QUERY PLAN"
+"Seq Scan on booking  (cost=0.00..1.03 rows=1 width=82) (actual time=0.023..0.024 rows=0 loops=1)"
+"  Filter: ((start_date >= '2025-05-01'::date) AND (start_date <= '2025-05-31'::date))"
+"  Rows Removed by Filter: 2"
+"Planning Time: 6.218 ms"
+"Execution Time: 0.134 ms"
